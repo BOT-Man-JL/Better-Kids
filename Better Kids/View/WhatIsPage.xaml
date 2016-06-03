@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="Better_Kids.View.WhatIsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Better_Kids.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<RelativePanel>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="1*" />
+					<ColumnDefinition Width="auto" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="90" />
+					<RowDefinition Height="4*" />
+					<RowDefinition Height="4*" />
+					<RowDefinition Height="10" />
+					<RowDefinition Height="1*" />
+					<RowDefinition Height="10" />
+					<RowDefinition Height="1*" />
+					<RowDefinition Height="10" />
+				</Grid.RowDefinitions>
+				<CaptureElement Name="previewControl" Stretch="Uniform" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" />
+				<Button Name="button" Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" FontFamily="Segoe MDL2 Assets" FontSize="72" HorizontalAlignment="Center" VerticalAlignment="Center" Content="&#xE722;" Background="Transparent" Click="Button_Click" />
+				<TextBlock Name="textblock1" Grid.Row="4" Grid.Column="0" FontSize="42" Text="Hello" HorizontalAlignment="Center" VerticalAlignment="Center" Tapped="textblock1_Tapped" />
+				<TextBlock Name="textblock2" Grid.Row="6" Grid.Column="0" FontSize="56" FontFamily="楷体" Text="你好" HorizontalAlignment="Center" VerticalAlignment="Center" Tapped="textblock2_Tapped" />
+				<Button Grid.Row="4" Grid.Column="1" Grid.RowSpan="3" FontFamily="Segoe MDL2 Assets" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Content="&#xE70F;" Background="Transparent" Click="Button_Click_1" />
+				<!--<Button Grid.Row="6" Grid.Column="1" FontFamily="Segoe MDL2 Assets" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" Content="&#xE70F;" Background="Transparent" Click="Button_Click_2" />-->
+			</Grid>
+		</RelativePanel>
+
+		<Image Source="../Assets/arrow.png" Height="200" Width="200" Visibility="Collapsed"/>
+	</Grid>
+</Page>

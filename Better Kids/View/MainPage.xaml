@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="Better_Kids.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Better_Kids"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#FFFFD602">
+        <Grid HorizontalAlignment="Center">
+            <RelativePanel HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFFFD602">
+                <RelativePanel HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFFFD602">
+                    <Image x:Name="image" HorizontalAlignment="Center" RelativePanel.Above="NavButons" Source="../Assets/NavImg.png" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" />
+                    <StackPanel x:Name="NavButons" Height="200" Width="auto" Orientation="Horizontal"  HorizontalAlignment="Center"
+                                RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Bottom">
+						<Button Content="情感学习" Margin="20" FontSize="72" Background="Transparent" BorderBrush="Black" Click="Button_Click_1"/>
+						<Button Content="情感模仿" Margin="20" FontSize="72" Background="Transparent" BorderBrush="Black" Click="Button_Click_2"/>
+						<Button Content="拍照识物" Margin="20" FontSize="72" Background="Transparent" BorderBrush="Black" Click="Button_Click_3"/>
+					</StackPanel>
+                </RelativePanel>
+            </RelativePanel>
+        </Grid>
+    </Grid>
+</Page>

@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="Better_Kids.View.Mimic"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Better_Kids.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <RelativePanel>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="500" />
+					<ColumnDefinition Width="8*" />
+					<ColumnDefinition Width="auto" />
+					<ColumnDefinition Width="10" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1*" />
+				</Grid.RowDefinitions>
+				<Image Name="image" Source="../Assets/small_tree.png" Stretch="Uniform" Grid.Column="0" />
+				<CaptureElement Name="previewControl" Stretch="Uniform" Grid.Column="1" />
+				<Button Name="button" Grid.Column="2" FontFamily="Segoe MDL2 Assets" FontSize="56" HorizontalAlignment="Center" VerticalAlignment="Center" Content="&#xE722;" Background="Transparent" Click="button_Click" />
+			</Grid>
+		</RelativePanel>
+        
+        <Image Source="../Assets/arrow.png" Height="200" Width="200" Visibility="Collapsed"/>
+    </Grid>
+</Page>
