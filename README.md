@@ -21,7 +21,7 @@ More and more people are *lack of expression* under the pressure of fast pace li
 - Computer Vision (Project Oxford)
 - ~~Linguistics (Project Oxford)~~ (removed in this version)
 - ~~Speech Recognition (Project Oxford)~~ (removed in this version)
-- Text to Speech (Windows 10 / Project Oxford)
+- Speech Synthesis (Windows 10 / Project Oxford)
 - Ink (Windows 10)
 - Translation (Youdao)
 
@@ -44,8 +44,8 @@ Guess Emotion
 ![Mimic Emotion](Demo/2_Mimic.jpg)
 Mimic Emotion
 
-![What Is by Taking Picture](Demo/3_WhatIs.jpg)
-What Is by Taking Picture
+![What-Is by Taking Picture](Demo/3_WhatIs.jpg)
+What-Is by Taking Picture
 
 ![Chinese Characters Handwriting](Demo/4_Ink_Done.jpg)
 Chinese Characters Handwriting
