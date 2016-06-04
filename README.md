@@ -30,7 +30,7 @@ More and more people are *lack of expression* under the pressure of fast pace li
 - Kids Education
 - Social Games
 
-## Demo
+## [Demo](http://v.youku.com/v_show/id_XMTU5NjY3MzIwOA==.html)
 
 ![Splash Screen](Demo/0_Splash.jpg)
 Splash Screen
