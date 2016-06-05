@@ -1,18 +1,18 @@
 # Better-Kids
 
-A project by Team **_Hack Tour_** (@hghwng) built in *Microsoft More Personal Computing Hackathon*, aiming to help kids learn the world.
+A project by Team **_Hack Tour_** (@hghwng) built in **Microsoft More Personal Computing Hackathon**, aiming to help kids learn the world.
 
 ## Motivation
 
-More and more people are *lack of expression* under the pressure of fast pace lives, and many *autism patients* are suffering mistaking others' emotions. So we wanna build an app for kids to help them learn the world better.
+More and more people are **lack of expression** under the pressure of fast pace lives, and many **autism patients** are suffering mistaking others' emotions. So we wanna build an app for kids to help them learn the world better.
 
-## Feature
+## Features
 
-- *Guess Emotion* of a face
-- *Mimic Emotion* of a face
-- Learn *What-It-Is* by *Taking a Picture*
-- Learn *English and Chinese*
-- Learn *Chinese Handwriting*
+- **Guess Emotion** of a face
+- **Mimic Emotion** of a face
+- Learn **What-It-Is** by *Taking a Picture*
+- Learn **English and Chinese**
+- Learn **Chinese Handwriting**
 
 ## APIs Used
 
