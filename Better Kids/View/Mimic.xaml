@@ -7,24 +7,39 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <!--<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Image Name="image" Source="../Assets/small_tree.png"
+                   Stretch="Uniform" Grid.Column="0" Margin="3"/>
+        <CaptureElement Name="previewControl" Stretch="Uniform"
+                            Grid.Column="1" Margin="3"/>
+        <Button Name="button" Grid.Column="2" Margin="3"
+                        FontFamily="Segoe MDL2 Assets" FontSize="56" 
+                        Content="&#xE722;" Background="Transparent"
+                        Click="button_Click"/>
+    </Grid>-->
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <RelativePanel>
-			<Grid>
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="500" />
-					<ColumnDefinition Width="8*" />
-					<ColumnDefinition Width="auto" />
-					<ColumnDefinition Width="10" />
-				</Grid.ColumnDefinitions>
-				<Grid.RowDefinitions>
-					<RowDefinition Height="1*" />
-				</Grid.RowDefinitions>
-				<Image Name="image" Source="../Assets/small_tree.png" Stretch="Uniform" Grid.Column="0" />
-				<CaptureElement Name="previewControl" Stretch="Uniform" Grid.Column="1" />
-				<Button Name="button" Grid.Column="2" FontFamily="Segoe MDL2 Assets" FontSize="56" HorizontalAlignment="Center" VerticalAlignment="Center" Content="&#xE722;" Background="Transparent" Click="button_Click" />
-			</Grid>
-		</RelativePanel>
-        
-        <Image Source="../Assets/arrow.png" Height="200" Width="200" Visibility="Collapsed"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Column="0" Grid.RowSpan="3"
+               Name="image" Source="../Assets/small_tree.png"
+               Stretch="Uniform" Margin="3"/>
+        <CaptureElement Grid.Column="1" Grid.RowSpan="3"
+                        Name="previewControl" Stretch="Uniform"
+                        Margin="3"/>
+        <Button Grid.Column="2" Grid.RowSpan="3"
+                Name="button" Margin="3"
+                FontFamily="Segoe MDL2 Assets" FontSize="56"
+                Content="&#xE722;" Background="Transparent"
+                VerticalAlignment="Center" HorizontalAlignment="Center"
+                Click="button_Click"/>
     </Grid>
 </Page>

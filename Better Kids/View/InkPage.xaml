@@ -8,7 +8,10 @@
     mc:Ignorable="d">
 
 	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<TextBlock Name="text" Opacity="0.1" FontSize="200" FontFamily="楷体" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.ZIndex="0" TextWrapping="WrapWholeWords"/>
+		<TextBlock Name="text" Text="haha" Opacity="0.1"
+                   FontSize="200" FontFamily="楷体"
+                   Canvas.ZIndex="0" TextWrapping="WrapWholeWords"
+                   VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <InkCanvas x:Name="inkCanvas" Canvas.ZIndex="1" />
 	</Grid>
 </Page>

@@ -6,20 +6,26 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-	
-	<Grid>
-		<Grid HorizontalAlignment="Center">
-			<RelativePanel HorizontalAlignment="Left" VerticalAlignment="Center">
-				<RelativePanel HorizontalAlignment="Left" VerticalAlignment="Center">
-					<Image x:Name="image" HorizontalAlignment="Center" Height="500" RelativePanel.Above="NavButons" Source="../Assets/small_tree.png" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" />
 
-                    <StackPanel x:Name="NavButons" Height="150" HorizontalAlignment="Center" Orientation="Horizontal"
-                                RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
-                        <Button x:Name="button1" Content="???" Click="Button_Click_1" FontSize="48" Width="200"/>
-                        <Button x:Name="button2" Content="???" Click="Button_Click_2" FontSize="48" Width="200" Margin="100, 0, 0, 0"/>
-                    </StackPanel>
-                </RelativePanel>
-			</RelativePanel>
-		</Grid>
-	</Grid>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="image" Source="../Assets/small_tree.png"/>
+        <Viewbox Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="button1" Content="???" Grid.Column="0"
+                    Click="Button_Click_1" FontSize="48"
+                    HorizontalAlignment="Left" Margin="10, 4"/>
+                <Button x:Name="button2" Content="???" Grid.Column="1"
+                    Click="Button_Click_2" FontSize="48"
+                    HorizontalAlignment="Right" Margin="10, 4"/>
+            </Grid>
+        </Viewbox>
+    </Grid>
 </Page>

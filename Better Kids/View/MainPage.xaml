@@ -8,18 +8,27 @@
     mc:Ignorable="d">
 
     <Grid Background="#FFFFD602">
-        <Grid HorizontalAlignment="Center">
-            <RelativePanel HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFFFD602">
-                <RelativePanel HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFFFD602">
-                    <Image x:Name="image" HorizontalAlignment="Center" RelativePanel.Above="NavButons" Source="../Assets/NavImg.png" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" />
-                    <StackPanel x:Name="NavButons" Height="200" Width="auto" Orientation="Horizontal"  HorizontalAlignment="Center"
-                                RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" VerticalAlignment="Bottom">
-						<Button Content="情感学习" Margin="20" FontSize="72" Background="Transparent" BorderBrush="Black" Click="Button_Click_1"/>
-						<Button Content="情感模仿" Margin="20" FontSize="72" Background="Transparent" BorderBrush="Black" Click="Button_Click_2"/>
-						<Button Content="拍照识物" Margin="20" FontSize="72" Background="Transparent" BorderBrush="Black" Click="Button_Click_3"/>
-					</StackPanel>
-                </RelativePanel>
-            </RelativePanel>
-        </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <Image Stretch="Uniform" Source="../Assets/NavImg.png"
+               Grid.RowSpan="2"/>
+        <Viewbox Stretch="Uniform" VerticalAlignment="Bottom"
+                 Grid.Row="1">
+            <StackPanel x:Name="sp" Orientation="Horizontal">
+                <StackPanel.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Margin" Value="20"/>
+                        <Setter Property="FontSize" Value="72"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                    </Style>
+                </StackPanel.Resources>
+                <Button Content="情感学习" Click="Button_Click_1"/>
+                <Button Content="情感模仿" Click="Button_Click_2"/>
+                <Button Content="拍照识物" Click="Button_Click_3"/>
+            </StackPanel>
+        </Viewbox>
     </Grid>
 </Page>

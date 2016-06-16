@@ -48,7 +48,7 @@ namespace Better_Kids
 				this.DebugSettings.EnableFrameRateCounter = true;
 			}
 #endif
-			await Oxford_GetImage.RetrieveUrls();
+			//await Oxford_GetImage.RetrieveUrls();
 
 			Frame rootFrame = Window.Current.Content as Frame;
 

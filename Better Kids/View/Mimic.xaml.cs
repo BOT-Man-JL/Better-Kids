@@ -53,6 +53,47 @@ namespace Better_Kids.View
 		{
 			this.InitializeComponent();
 			NavigationCacheMode = NavigationCacheMode.Disabled;
+			this.SizeChanged += Mimic_SizeChanged;
+		}
+
+		private void Mimic_SizeChanged(object sender, SizeChangedEventArgs e)
+		{
+			if (e.NewSize.Width < e.NewSize.Height && e.PreviousSize.Width >= e.PreviousSize.Height)
+			// Vertical
+			{
+				image.SetValue(Grid.RowProperty, 0);
+				image.SetValue(Grid.ColumnProperty, 0);
+				image.SetValue(Grid.RowSpanProperty, 1);
+				image.SetValue(Grid.ColumnSpanProperty, 3);
+
+				previewControl.SetValue(Grid.RowProperty, 1);
+				previewControl.SetValue(Grid.ColumnProperty, 0);
+				previewControl.SetValue(Grid.RowSpanProperty, 1);
+				previewControl.SetValue(Grid.ColumnSpanProperty, 3);
+
+				button.SetValue(Grid.RowProperty, 2);
+				button.SetValue(Grid.ColumnProperty, 0);
+				button.SetValue(Grid.RowSpanProperty, 1);
+				button.SetValue(Grid.ColumnSpanProperty, 3);
+			}
+			else if (e.NewSize.Width > e.NewSize.Height && e.PreviousSize.Width <= e.PreviousSize.Height)
+			// Horizontal
+			{
+				image.SetValue(Grid.RowProperty, 0);
+				image.SetValue(Grid.ColumnProperty, 0);
+				image.SetValue(Grid.RowSpanProperty, 3);
+				image.SetValue(Grid.ColumnSpanProperty, 1);
+
+				previewControl.SetValue(Grid.RowProperty, 0);
+				previewControl.SetValue(Grid.ColumnProperty, 1);
+				previewControl.SetValue(Grid.RowSpanProperty, 3);
+				previewControl.SetValue(Grid.ColumnSpanProperty, 1);
+
+				button.SetValue(Grid.RowProperty, 0);
+				button.SetValue(Grid.ColumnProperty, 2);
+				button.SetValue(Grid.RowSpanProperty, 3);
+				button.SetValue(Grid.ColumnSpanProperty, 1);
+			}
 		}
 
 		private void LoadImage()

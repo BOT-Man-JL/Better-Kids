@@ -8,29 +8,48 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <RelativePanel>
-            <!-- Left bar -->
-            <RelativePanel x:Name="NavBar" Width="200" HorizontalAlignment="Center"
-                               RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" Background="#FFF3F3F3">
-                <!-- Back button -->
-				<Button x:Name="Back" Height="100" Width="100" Margin="43,21,-43,-21" FontFamily="Segoe MDL2 Assets" FontSize="72" RenderTransformOrigin="0.5,0.5" Click="GoBack" Background="Transparent">
-					&#xE72B;
-                </Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
 
-                <!-- Tree -->
-                <StackPanel RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.Below="Back" VerticalAlignment="Bottom">
-                    <Image Source="ms-appx:///Assets/small_tree.png"  RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True"/>
-                    <Image x:Name="Mid" Source="ms-appx:///Assets/trunk.png" Height="200" Stretch="Fill"/>
-                    <Image Source="ms-appx:///Assets/bottom.png"/>
-                </StackPanel>
-            </RelativePanel>
+        <!-- Left bar -->
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
 
-            <!-- Main content -->
-            <RelativePanel x:Name="MainContentAndTitle" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.RightOf="NavBar" Margin="5" Background="White">
-                <TextBlock x:Name="Title" Text="???" FontSize="48" RelativePanel.AlignTopWithPanel="True"/>
-                <Rectangle x:Name="Timer" Height="5" Width="100" Fill="#FFFFD602" RelativePanel.Below="Title"/>
-                <Frame x:Name="mainFrame" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.Below="Timer"/>
-            </RelativePanel>
-        </RelativePanel>
+            <!-- Back button -->
+            <Viewbox HorizontalAlignment="Center"
+                     VerticalAlignment="Top">
+                <Button x:Name="Back" Margin="10"
+                        FontFamily="Segoe MDL2 Assets" FontSize="72"
+                        Click="GoBack" Background="Transparent"
+                        Content="&#xE72B;" FontWeight="ExtraBold"/>
+            </Viewbox>
+            <!-- Tree -->
+            <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
+                <Image Source="ms-appx:///Assets/small_tree.png"/>
+                <Image x:Name="Mid" Source="ms-appx:///Assets/trunk.png" Height="200" Stretch="Fill"/>
+                <Image Source="ms-appx:///Assets/bottom.png"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Main content -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="17*"/>
+            </Grid.RowDefinitions>
+            <Viewbox>
+                <TextBlock x:Name="Title" Text="???" FontSize="56"
+                           HorizontalAlignment="Left"/>
+            </Viewbox>
+            <Rectangle x:Name="Timer" Grid.Row="1"
+                       Fill="#FFFFD602" Height="5"/>
+            <Frame x:Name="mainFrame" Grid.Row="2"/>
+        </Grid>
     </Grid>
 </Page>

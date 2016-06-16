@@ -29,9 +29,18 @@ namespace Better_Kids
 		public MainPage()
 		{
 			this.InitializeComponent();
+			this.SizeChanged += MainPage_SizeChanged;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+		private void MainPage_SizeChanged(object sender, SizeChangedEventArgs e)
+		{
+			if (e.NewSize.Width < e.NewSize.Height && e.PreviousSize.Width >= e.PreviousSize.Height)
+				sp.Orientation = Orientation.Vertical;
+			else if (e.NewSize.Width > e.NewSize.Height && e.PreviousSize.Width <= e.PreviousSize.Height)
+				sp.Orientation = Orientation.Horizontal;
+		}
+
+		private void Button_Click_1(object sender, RoutedEventArgs e)
 		{
 			Frame rootFrame = Window.Current.Content as Frame;
 			rootFrame.Navigate(typeof(View.MyFrame), 1);
