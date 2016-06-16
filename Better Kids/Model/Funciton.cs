@@ -90,7 +90,7 @@ namespace Better_Kids.Model
 				tasks.Add(client.GetAsync($"{Key_Manager.bing_url}?q={type}&count={Key_Manager.bing_cBuffer}"));
 
 				// Avoid over 5 request in a second
-				await Task.Delay(500);
+				await Task.Delay(1000);
 			}
 
 			try
