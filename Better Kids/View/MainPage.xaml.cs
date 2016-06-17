@@ -30,14 +30,14 @@ namespace Better_Kids
 		{
 			this.InitializeComponent();
 			this.SizeChanged += MainPage_SizeChanged;
-        }
+		}
 
 		private void MainPage_SizeChanged(object sender, SizeChangedEventArgs e)
 		{
 			if (e.NewSize.Width < e.NewSize.Height && e.PreviousSize.Width >= e.PreviousSize.Height)
-				sp.Orientation = Orientation.Vertical;
+				VisualStateManager.GoToState(this, "MobileState", false);
 			else if (e.NewSize.Width > e.NewSize.Height && e.PreviousSize.Width <= e.PreviousSize.Height)
-				sp.Orientation = Orientation.Horizontal;
+				VisualStateManager.GoToState(this, "DesktopState", false);
 		}
 
 		private void Button_Click_1(object sender, RoutedEventArgs e)

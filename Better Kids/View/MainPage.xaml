@@ -8,6 +8,20 @@
     mc:Ignorable="d">
 
     <Grid Background="#FFFFD602">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="DesktopState">
+                    <VisualState.Setters>
+                        <Setter Target="sp.Orientation" Value="Horizontal"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="MobileState">
+                    <VisualState.Setters>
+                        <Setter Target="sp.Orientation" Value="Vertical"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="8*"/>
             <RowDefinition Height="6*"/>
