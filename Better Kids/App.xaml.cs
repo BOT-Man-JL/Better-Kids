@@ -8,6 +8,9 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Foundation.Metadata;
+using Windows.Graphics.Display;
+using Windows.System.Profile;
 using Windows.UI;
 using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
@@ -70,6 +73,23 @@ namespace Better_Kids
 				Window.Current.Content = rootFrame;
 			}
 
+			// Set TitleBar Color and Mobile View Mode
+			var view = ApplicationView.GetForCurrentView();
+			if (AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Desktop")
+			{
+				var bgColor = Color.FromArgb(127, 255, 214, 4);
+				view.TitleBar.BackgroundColor = bgColor;
+				view.TitleBar.ButtonBackgroundColor = bgColor;
+			}
+			else if (AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile")
+			{
+				// To enable Hiding StatusBar, you should Add Windows Mobile to References.
+				//if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
+				//  StatusBar.GetForCurrentView().HideAsync();
+				view.TryEnterFullScreenMode();
+				DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
+			}
+
 			if (e.PrelaunchActivated == false)
 			{
 				if (rootFrame.Content == null)
@@ -77,9 +97,6 @@ namespace Better_Kids
 					// When the navigation stack isn't restored navigate to the first page,
 					// configuring the new page by passing required information as a navigation
 					// parameter
-					var view = ApplicationView.GetForCurrentView();
-					view.TitleBar.BackgroundColor = Color.FromArgb(0, 255, 214, 4);
-					view.TitleBar.ButtonBackgroundColor = Color.FromArgb(0, 255, 214, 4);
 					rootFrame.Navigate(typeof(MainPage), e.Arguments);
 				}
 				// Ensure the current window is active
