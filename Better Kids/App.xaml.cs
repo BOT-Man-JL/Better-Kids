@@ -51,6 +51,24 @@ namespace Better_Kids
 				this.DebugSettings.EnableFrameRateCounter = true;
 			}
 #endif
+
+			// Set TitleBar Color and Mobile View Mode
+			var view = ApplicationView.GetForCurrentView();
+			if (AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Desktop")
+			{
+				var bgColor = Color.FromArgb(127, 255, 214, 4);
+				view.TitleBar.BackgroundColor = bgColor;
+				view.TitleBar.ButtonBackgroundColor = bgColor;
+			}
+			else if (AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile")
+			{
+				// To enable Hiding StatusBar, you should Add Windows Mobile to References.
+				//if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
+				//  StatusBar.GetForCurrentView().HideAsync();
+				view.TryEnterFullScreenMode();
+				DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
+			}
+
 			await Oxford_GetImage.RetrieveUrls();
 
 			Frame rootFrame = Window.Current.Content as Frame;
@@ -71,23 +89,6 @@ namespace Better_Kids
 
 				// Place the frame in the current Window
 				Window.Current.Content = rootFrame;
-			}
-
-			// Set TitleBar Color and Mobile View Mode
-			var view = ApplicationView.GetForCurrentView();
-			if (AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Desktop")
-			{
-				var bgColor = Color.FromArgb(127, 255, 214, 4);
-				view.TitleBar.BackgroundColor = bgColor;
-				view.TitleBar.ButtonBackgroundColor = bgColor;
-			}
-			else if (AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile")
-			{
-				// To enable Hiding StatusBar, you should Add Windows Mobile to References.
-				//if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
-				//  StatusBar.GetForCurrentView().HideAsync();
-				view.TryEnterFullScreenMode();
-				DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
 			}
 
 			if (e.PrelaunchActivated == false)
